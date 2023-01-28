@@ -4,13 +4,17 @@
 
 @layer components {
     .nav-item {
-        @apply block px- text-gray-700 rounded;
+        @apply block px-4 text-gray-700 rounded;
     }
     .nav-item:hover {
-        @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:px-1s;
+        @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700;
     }
     .nav-item:active {
         @apply md:text-blue-700;
+    }
+
+    .dropdown-item {
+        @apply block px-4 py-2 hover:bg-gray-100;
     }
 }
 
