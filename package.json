@@ -4,11 +4,5 @@
   },
   "dependencies": {
     "flowbite": "^1.6.3"
-  },
-  "scripts": {
-      // use in local environment
-      "tailwind-watch": "tailwindcss -i ../input.css -o ../static/css/output.css --watch",
-      // use in remote environment
-      "tailwind-build": "tailwindcss -i ../input.css -o ../static/css/output.css --minify"
-    }
+  }
 }
