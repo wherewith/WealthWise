@@ -1,12 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flowbite Flask</title>
-    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
-</head>
-<body>
-<h1 class="text-blue-500">Hello, Flask!</h1>
-</body>
-</html>
+{% extends "base.html" %}
+{% set active_page = "index" %}
+{% block title %}WealthWise - ~~~{% endblock %}
+{% block content %}
+<p class="text-blue-400">Content</p>
+{% endblock %}
