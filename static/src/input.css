@@ -2,3 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .nav-item {
+        @apply block px- text-gray-700 rounded;
+    }
+    .nav-item:hover {
+        @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:px-1s;
+    }
+    .nav-item:active {
+        @apply md:text-blue-700;
+    }
+}
+
