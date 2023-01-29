@@ -10,6 +10,10 @@ def index():
 def about():
 	return render_template("about.html")
 
+@app.route("/wiki/")
+def wiki_home():
+	return render_template("/wiki/home.html")
+
 @app.route("/wiki/fico/")
 def wiki_fico():
 	return render_template("/wiki/fico.html")

@@ -8,7 +8,7 @@
         transition ease-in duration-200;
     }
     .logo:hover {
-        @apply -rotate-12 scale-125
+        @apply -rotate-6 scale-[120%]
         transition ease-in duration-200;
     }
 
