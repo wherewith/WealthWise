@@ -4,19 +4,93 @@
 {% block content %}
 
 <section class="bg-white dark:bg-gray-900">
-    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:py-16 lg:px-6">
+        <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400 col-span-1">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">What is a FICO Score?</h2>
-            <p class="mb-4"> </p>
-            <br>
+            <p class="mb-4">A FICO Score is a number ranging from 300 to 850 that is characteristic of your credit reports. It is a measure of your payment history, amounts owed, credit length, inquiries, and credit mix. </p>
             <h2 class="mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">Why does it matter?</h2>
-            <p class="mb-4">If you are applying for a new credit card or trying to take out a loan, lenders can quickly assess your credit history. </p>
-        </div>
-        <div class="grid grid-cols-2 gap-4 mt-8">
-            <img class="w-full rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-2.png" alt="office content 1">
-            <img class="mt-4 w-full lg:mt-10 rounded-lg" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png" alt="office content 2">
-        </div>
+            <p class="mb-4">If you are applying for a new credit card or trying to take out a loan, lenders can quickly assess your credit history using your FICO score.
+                            </p>
+            <h2 class="mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">How do I improve my score?</h2>
+            <p class="mb-4" > To improve your FICO score, here are some categories to consider:</p>
+            <br>
+<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
+    <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab" data-tabs-toggle="#myTabContent" role="tablist">
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 rounded-t-lg" id="profile-tab" data-tabs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">History</button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="dashboard-tab" data-tabs-target="#dashboard" type="button" role="tab" aria-controls="dashboard" aria-selected="false">Amounts Owed</button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="settings-tab" data-tabs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="false">Credit Length</button>
+        </li>
+        <li class="mr-2" role="presentation">
+            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="swanky-tab" data-tabs-target="#swanky" type="button" role="tab" aria-controls="settings" aria-selected="false">Credit Mix</button>
+        </li>
+        <li role="presentation">
+            <button class="inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300" id="contacts-tab" data-tabs-target="#contacts" type="button" role="tab" aria-controls="contacts" aria-selected="false">Inquiries</button>
+        </li>
+    </ul>
+</div>
+<div id="myTabContent">
+    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+        <p class="text-sm text-gray-500 dark:text-gray-400">Make sure to pay your lender(s) on time, every time. <strong class="font-medium text-gray-800 dark:text-white">In fact, 35% of your FICO score is from this category</strong>. <class="text-sm text-gray-500 dark:text-gray-400"> This makes up the largest component as it
+             shows that you are a trustable and responsible candidate when it comes to taking loans.</p>
     </div>
-</section>
+    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+        <p class="text-sm text-gray-500 dark:text-gray-400">Revolving utilization is calculated as a percentage of the balance you owe out of your total credit line. It is suggested to keep the credit utilization at 30% or less whenever possible. <strong class="font-medium text-gray-800 dark:text-white"> This makes up 30% of your FICO score. </strong> </p>
+    </div>
+    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="settings" role="tabpanel" aria-labelledby="settings-tab">
+        <p class="text-sm text-gray-500 dark:text-gray-400">The longer your credit history, the better. Naturally, with time, the score contribution of this section will increase.<strong class="font-medium text-gray-800 dark:text-white"> A good credit length is considered to be 7 years. This makes up 15% of your FICO score</strong>. It is still important that you are making credit payments on-time. </p>
+    </div>
+    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="swanky" role="tabpanel" aria-labelledby="swanky-tab">
+        <p class="text-sm text-gray-500 dark:text-gray-400">Having multiple credit types shows that you are responsible, which improves your FICO score. On top of that, this can help lower your revolving utilization.<strong class="font-medium text-gray-800 dark:text-white"> This makes up 10% of your FICO score</strong>. </p>
+    </div>
+    <div class="hidden p-4 rounded-lg bg-gray-50 dark:bg-gray-800" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+        <p class="text-sm text-gray-500 dark:text-gray-400">When you apply for credit, the lender will perform what is known as a hard inquiry (credit check). This will temporarily reduce your credit score, and stay for 24 months. <strong class="font-medium text-gray-800 dark:text-white"> This makes up 10% of your FICO score</strong>. </p>
+    </div>
+</div>
+        </div>
+            <br>
+<div class="shadow-lg rounded-lg overflow-hidden row-start-1 col-start-2">
+  <div class="py-3 px-5 bg-gray-50">FICO Score Breakdown</div>
+  <canvas class="p-10" id="chartPie"></canvas>
+</div>
+            </div>
 
+
+<!-- Required chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<!-- Chart pie -->
+
+<script>
+  const dataPie = {
+    labels: ["History", "Amounts Owed", "Credit Length", "Inquiries", "Credit Mix"],
+    datasets: [
+      {
+        label: "FICO Score Breakdown",
+        data: [35, 30, 15, 10, 10],
+        backgroundColor: [
+          "rgb(61, 75, 235)",
+          "rgb(100, 111, 239)",
+          "rgb(131, 140, 242)",
+            "rgb(156, 163, 245)",
+            "rgb(176, 181, 247)"
+        ],
+        hoverOffset: 4,
+      },
+    ],
+  };
+
+  const configPie = {
+    type: "pie",
+    data: dataPie,
+    options: {},
+  };
+
+  var chartBar = new Chart(document.getElementById("chartPie"), configPie);
+</script>
+</section>
 {% endblock %}
