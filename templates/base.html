@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" href="/static/assets/WealthWise.svg">
     {% set active_page = active_page|default('index') -%}
 
     <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
 </head>
 <body>
 {% set navigation_bar = [
-    ('/', 'index', 'Home'),
-    ('/about/', 'about', 'About'),
-    ('/fico/', 'fico', 'FICO')
+('/', 'index', 'Home'),
+('/about/', 'about', 'About'),
+] -%}
+{% set wiki = [
+('/wiki/fico/', 'fico', 'FICO')
 ] -%}
 
 <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
     <div class="container flex flex-wrap items-center justify-between mx-auto">
         <a href="/" class="flex items-center">
-            <img src="https://flowbite.com/docs/images/logo.svg" class="h-6 mr-3 sm:h-9" alt="WealthWise Logo">
+            <img src="static/assets/WealthWise2x.png" class="h-9 mr-3" alt="WealthWise Logo">
             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WealthWise</span>
         </a>
         <div class="flex md:order-2">
@@ -38,11 +41,34 @@
             <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
                 {% for href, id, caption in navigation_bar %}
                 <li>
-                    <a{% if id==active_page %} class="nav-item" {% else %} class = "nav-item" {% endif %} href="{{href|e}}">{{caption|e}}</a>
+                    <a{% if id==active_page %} class="nav-item active" {% else %} class = "nav-item" {% endif %}
+                    href="{{href|e}}">{{caption|e}}</a>
                 </li>
                 {% endfor %}
+                <button id="dropdownNavbarLink" data-dropdown-toggle="dropdownNavbar"
+                        class="nav-item flex">
+                    Wiki
+                    <svg class="w-5 h-5 ml-1" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <!-- Dropdown menu -->
+                <div id="dropdownNavbar"
+                     class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-40 dark:bg-gray-700 dark:divide-gray-600">
+                    <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
+                        {% for href, id, caption in wiki %}
+                        <li>
+                            <a{ class="dropdown-item" href="{{href|e}}">{{caption|e}}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
             </ul>
         </div>
+
     </div>
 </nav>
 
@@ -50,7 +76,6 @@
     {% block content %}
     {% endblock %}
 </div>
-
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
