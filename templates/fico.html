@@ -4,21 +4,28 @@
 {% block content %}
 
 <section class="bg-white dark:bg-gray-900">
-    <div class="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:py-16 lg:px-6">
+    <div class="gap-16  py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:py-16 lg:px-6">
         <div class="font-light text-gray-500 sm:text-lg dark:text-gray-400 col-span-1">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">What is a FICO
                 Score?</h2>
-            <p class="mb-4">A FICO score (A.K.A. credit score) is like a report card for your money- Just like how your report card shows how
-                well you do in school, a FICO score shows how well you handle money and pay back loans. FICO Scores range
-                from 300 to 850 based on how trustworthy the bank considers you to be. It is a measure of your payment history, amounts owed, credit length, inquiries, and credit
+            <p class="mb-4">A FICO score (A.K.A. credit score) is like a report card for your money- Just like how your
+                report card shows how
+                well you do in school, a FICO score shows how well you handle money and pay back loans. FICO Scores
+                range
+                from 300 to 850 based on how trustworthy the bank considers you to be. It is a measure of your payment
+                history, amounts owed, credit length, inquiries, and credit
                 mix. </p>
             <h2 class="mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">Why does it matter?</h2>
             <p class="mb-4">If you are applying for a new credit card or trying to take out a loan, lenders can quickly
-                assess your credit history using your FICO score. If your FICO score is too low, it may be more difficult
+                assess your credit history using your FICO score. If your FICO score is too low, it may be more
+                difficult
                 for you to get approved for loans or credit cards, and if you are approved, you may be offered worse
-                terms, such as higher interest rates. This can make it more expensive to borrow money, and can also limit your
-                to make large purchases, such as a car or a house. Additionally, landlords and employers may also check your
-                credit score as a part of their background check process, so a low score could make it harder for you to rent
+                terms, such as higher interest rates. This can make it more expensive to borrow money, and can also
+                limit your
+                to make large purchases, such as a car or a house. Additionally, landlords and employers may also check
+                your
+                credit score as a part of their background check process, so a low score could make it harder for you to
+                rent
                 an apartment or get a job, since FICO scores are a measure of how responsible you are with your money.
             </p>
             <h2 class="mb-4 text-3xl tracking-tight font-bold text-gray-900 dark:text-white">How do I improve my
@@ -103,9 +110,15 @@
                 </div>
             </div>
         </div>
-        <br>
-        <div class="shadow-lg rounded-lg overflow-hidden row-start-1 col-start-2">
-            <div class="py-3 px-5 bg-gray-50">FICO Score Breakdown</div>
+        <div class="shadow-lg rounded-lg overflow-hidden col-start-2 align-top p-1">
+            <div class="justify-left content-center flex">
+                <label for="default-input"
+                       class="relative py-3 px-5 text-sm font-medium rounded-sm text-gray-900 bg-gray-50">Enter
+                    your FICO score for more insight:</label>
+                <input type="text" id="default-input"
+                       class="bg-gray-50 py-1.5 border border-gray-300 text-black text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 relative">
+            </div>
+            <div class="py-3 px-5 font-medium bg-gray-50">FICO Score Breakdown</div>
             <canvas class="p-10" id="chartPie"></canvas>
         </div>
     </div>
