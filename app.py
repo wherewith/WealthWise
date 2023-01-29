@@ -20,7 +20,13 @@ def wiki_fico():
 
 @app.route("/wiki/students/")
 def wiki_students():
+<<<<<<< Updated upstream
 	return render_template("/wiki/students.html")
+	return render_template("students.html")
+
+@app.route("/expenses/")
+def expenses():
+	return render_template("expenses.html")
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% set active_page = "expenses" %}
+{% block title %}WealthWise - Home{% endblock %}
+{% block content %}
+<div class="flex flex-col items-center min-h-screen px-20 py-4">
+	 <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Expense Tracker</h2>
+  <table id="table" class="w-full p-2">
+    <thead>
+      <tr>
+        <th class="p-1 bg-gray-100 border">Item</th>
+        <th class="p-1 bg-gray-100 border">Cost</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+	<h2 id="sum" className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white"></h2>
+
+  <form id="add-form" class="flex flex mt-6 space-x-3">
+    <input name="item" class="px-2 py-4 border-gray-100 rounded bg-gray-50" type="text" placeholder="Item" />
+    <input name="cost" class="px-2 py-4 border-gray-100 rounded bg-gray-50" type="text" placeholder="Cost" />
+    <button type="submit" id="add-button" class="px-20 py-4 text-white bg-blue-500 rounded">Add</button>
+  </form>
+	<br>
+	<button onclick="window.print()" id="print" class="px-5 py-1 text-white bg-blue-500 rounded ">Print</button>
+
+
+</div>
+
+<script>
+  const form = document.getElementById("add-form");
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const data = new FormData(event.target);
+    var row = table.insertRow(-1);
+
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.innerHTML = data.get("item");
+    cell1.className = "p-1 border";
+    cell2.innerHTML = data.get("cost");
+    cell2.className = "p-1 border";
+	var sum = 0.0;
+	var myTable = document.getElementById("table");
+	for (var i = 1; i < myTable.rows.length; i++) {
+		sum += parseFloat(myTable.rows[i].cells[1].innerHTML);
+	}
+	document.getElementById("sum").innerHTML = "Sum: $"+String(sum.toFixed(2));
+	document.getElementById("sum").style.fontSize = "large"
+    form.reset()
+  }
+  );
+</script>
+{% endblock %}
