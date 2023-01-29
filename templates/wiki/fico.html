@@ -4,7 +4,7 @@
 {% block content %}
 
 <section class="bg-white">
-    <div class="gap-16  py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:py-16 lg:px-6">
+    <div class="gap-16  py-4 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-rows-2 lg:grid-cols-2 lg:py-16 lg:px-6">
         <div class="font-light text-gray-500 sm:text-lg col-span-1">
             <h2 class="heading">What is a FICO
                 Score?</h2>
@@ -31,7 +31,6 @@
             <h2 class="heading">How do I improve my
                 score?</h2>
             <p class="mb-4"> To improve your FICO score, here are some categories to consider:</p>
-            <br>
             <div class="mb-4 border-b border-gray-200">
                 <ul class="flex flex-wrap -mb-px text-sm font-medium text-center" id="myTab"
                     data-tabs-toggle="#myTabContent" role="tablist">
@@ -116,7 +115,13 @@
                        class="flex-1 py-3 px-5 text-sm font-medium rounded-sm text-gray-900 bg-gray-50">Please enter
                     your FICO (credit) score for more insight:</label>
                 <input type="number" id="default-input"
-                       class="bg-gray-50 py-1.5 border border-gray-300 text-black text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 relative">
+                       class="bg-gray-50 py-1.5 border border-gray-300 text-black text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 relative"
+                       onkeydown="if (event.keyCode === 13)
+                        document.getElementById('btnSearch').click()">
+                <input type="button"
+                       id="btnSearch"
+                       value=""
+                       onclick="displayCreditStats();"/>
             </div>
             <div class="py-3 px-5 font-medium bg-gray-50">FICO Score Breakdown</div>
             <canvas class="p-5" id="chartPie"></canvas>
@@ -130,6 +135,28 @@
     <!-- Chart pie -->
 
     <script>
+        function displayCreditStats() {
+            let x = document.getElementById("default-input").value;
+            var y = "";
+            var p = 0;
+            if(x < 579) {
+                y = "Poor";
+                p = 16;
+            } else if(x < 669) {
+                y = "Fair";
+                p = 17;
+            } else if(x < 739) {
+                y = "Good";
+                p = 21;
+            } else if(x < 799) {
+                y = "Very Good";
+                p = 25;
+            } else {
+                y = "Exceptional";
+                p = 21;
+            }
+            window.alert("A FICO score of "+x+" is considered: "+y+"\n"+p+"% of Americans share your score.");
+        }
         const dataPie = {
             labels: ["History", "Amounts Owed", "Credit Length", "Inquiries", "Credit Mix"],
             datasets: [

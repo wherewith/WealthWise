@@ -4,11 +4,11 @@
 
 @layer components {
     .logo {
-        @apply relative
+        @apply relative scale-110
         transition ease-in duration-200;
     }
     .logo:hover {
-        @apply -rotate-12 scale-110
+        @apply -rotate-12 scale-125
         transition ease-in duration-200;
     }
 
@@ -32,5 +32,9 @@
 
     .tab-button {
         @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300;
+    }
+
+    #dim-screen {
+        @apply fixed p-0 m-0 top-0 left-0 w-full h-full z-50 bg-white;
     }
 }

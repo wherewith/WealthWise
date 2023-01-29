@@ -8,21 +8,31 @@
     {% set active_page = active_page|default('index') -%}
 
     <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dim-screen').fadeOut(200);
+            $('#dim-screen').addClass('z-50');
+        });
+    </script>
 </head>
 <body>
+<div id="dim-screen">
+
+</div>
 {% set navigation_bar = [
 ('/', 'index', 'Home'),
 ('/about/', 'about', 'About'),
 ] -%}
 {% set wiki = [
-('/wiki/fico/', 'fico', 'FICO'),
+('/wiki/fico/', 'fico', 'What is FICO?'),
 ('/wiki/students/', 'students', "Students' Guide"),
 ] -%}
 
-<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
-    <div class="container flex flex-wrap items-center justify-between mx-auto">
-        <a href="/" class="flex items-center">
-            <img src="/static/assets/WealthWise2x.png" class="logo h-9 mr-1" alt="WealthWise Logo">
+<nav class="navbar navbar-expand-lg bg-white border-b-1 m-0 px-2 sm:px-4 py-2.5 shadow-md relative flex items-center w-full justify-between">
+    <div class="container flex flex-wrap items-center justify-between ">
+        <a href="/" class="flex items-center ml-10 align-left">
+            <img src="/static/assets/WealthWise2x.png" class="logo h-9 mr-3" alt="WealthWise Logo">
             <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WealthWise</span>
         </a>
         <div class="flex md:order-2">
@@ -80,7 +90,6 @@
     {% block content %}
     {% endblock %}
 </div>
-
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.3/flowbite.min.js"></script>
 </body>
