@@ -10,7 +10,6 @@ def index():
 def about():
 	return render_template("about.html")
 
-@app.route("/wiki/")
 @app.route("/wiki/fico/")
 def wiki_fico():
 	return render_template("fico.html")

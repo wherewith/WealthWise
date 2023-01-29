@@ -3,14 +3,23 @@
 @tailwind utilities;
 
 @layer components {
+    .logo {
+        @apply relative
+        transition ease-in duration-200;
+    }
+    .logo:hover {
+        @apply -rotate-12 scale-110
+        transition ease-in duration-200;
+    }
+
     .nav-item {
-        @apply block px-4 text-gray-700 rounded;
+        @apply block px-4 text-gray-700 transition duration-500 border-b-4 border-transparent;
     }
     .nav-item:hover {
-        @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700;
+        @apply hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 border-blue-600;
     }
-    .nav-item:active {
-        @apply md:text-blue-700;
+    .active {
+        @apply md:text-blue-700 border-blue-600;
     }
 
     .dropdown-item {
