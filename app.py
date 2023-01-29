@@ -12,11 +12,11 @@ def about():
 
 @app.route("/wiki/fico/")
 def wiki_fico():
-	return render_template("fico.html")
+	return render_template("/wiki/fico.html")
 
 @app.route("/wiki/students/")
 def wiki_students():
-	return render_template("students.html")
+	return render_template("/wiki/students.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
