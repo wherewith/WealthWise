@@ -25,4 +25,12 @@
     .dropdown-item {
         @apply block px-4 py-2 hover:bg-gray-100;
     }
+
+    .heading {
+        @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900;
+    }
+
+    .tab-button {
+        @apply inline-block p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300;
+    }
 }
