@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% set active_page = "students" %}
+{% block title %}WealthWise - Students' Guide{% endblock %}
+{% block content %}
+
+<section class="bg-white dark:bg-gray-900">
+  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
+      <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">How can you save money as a student?</h2>
+      <div class="grid pt-8 text-left border-t border-gray-200 md:gap-16 dark:border-gray-700 md:grid-rows-3 md:grid-cols-2">
+              <div class="mb-10 row-start-1 col-start-1">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      Use Sustainable Transportation
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">Today, gas prices are exceptionally high. If possible and available, you should use public transportation to save money.
+                       For example, Texas A&M University, will provide free bus service both on/off campus as long as you are a valid student.
+                      Another option is to consider investing in a bicycle. In the long run, it will be more cost-efficient than the gasoline required to fill up your tank. On top of the financial benefit, sustainable transporation is better for the environment!</p>
+              </div>
+              <div class="mb-10 row-start-2 col-start-1">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      Limit Food Delivery Services
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">Although food-delivery services are very convenient, limiting the number of times you order delivery can easily help you save money.
+                      Every time you order food delivery, you are paying for increased menu prices, convenience fees, gasoline fees, and a delivery tip.
+                      Now, if you were to have those expenses occur multiple times a week, you would see that it adds up! By limiting food-delivery, you can save a lot of money.</p>
+              </div>
+              <div class="mb-10 row-start-3 col-start-1">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      How does support work?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">We're aware of the importance of well qualified support, that is why we decided that support will only be provided by the authors that actually worked on this project.</p>
+                  <p class="text-gray-500 dark:text-gray-400">Feel free to <a href="#" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline" target="_blank" rel="noreferrer">contact us</a> and we'll help you out as soon as we can.</p>
+              </div>
+              <div class="mb-10 row-start-4 col-start-1">
+                  <h3 class="flex items-center mb-4 text-lg font-medium text-gray-900 dark:text-white">
+                      I want to build more than one project. Is that allowed?
+                  </h3>
+                  <p class="text-gray-500 dark:text-gray-400">You can use Windster for an unlimited amount of projects, whether it's a personal website, a SaaS app, or a website for a client. As long as you don't build a product that will directly compete with Windster either as a UI kit, theme, or template, it's fine.</p>
+                  <p class="text-gray-500 dark:text-gray-400">Find out more information by <Link to="/license" class="font-medium underline text-primary-600 dark:text-primary-500 hover:no-underline">reading the license</Link>.</p>
+              </div>
+          <div class = "row-start-1 col-start-2 py-10">
+              <object data="/static/assets/bus.svg" width="125" height="125"> </object>
+              </div>
+
+          <div class = "row-start-2 col-start-2 py-10">
+              <object data="/static/assets/food.svg" width="125" height="125"> </object>
+              </div>
+
+          <div class = "row-start-3 col-start-2 py-10">
+              <object data="/static/assets/food.svg" width="125" height="125"> </object>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+{% endblock %}
