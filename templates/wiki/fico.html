@@ -110,16 +110,16 @@
                 </div>
             </div>
         </div>
-        <div class="shadow-lg rounded-lg overflow-hidden col-start-2 align-top p-1">
-            <div class="justify-left content-center flex">
+        <div class="shadow-lg rounded-lg overflow-hidden col-start-2 align-top p-1 w-full">
+            <div class="flex justify-between">
                 <label for="default-input"
-                       class="relative py-3 px-5 text-sm font-medium rounded-sm text-gray-900 bg-gray-50">Enter
-                    your FICO score for more insight:</label>
-                <input type="text" id="default-input"
+                       class="flex-1 py-3 px-5 text-sm font-medium rounded-sm text-gray-900 bg-gray-50">Please enter
+                    your FICO (credit) score for more insight:</label>
+                <input type="number" id="default-input"
                        class="bg-gray-50 py-1.5 border border-gray-300 text-black text-sm rounded-sm focus:ring-blue-500 focus:border-blue-500 bg-gray-50 relative">
             </div>
             <div class="py-3 px-5 font-medium bg-gray-50">FICO Score Breakdown</div>
-            <canvas class="p-10" id="chartPie"></canvas>
+            <canvas class="p-5" id="chartPie"></canvas>
         </div>
     </div>
 
